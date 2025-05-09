@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  email    String  @unique
+  password String
+  name     String?
+}
+
+model Post {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  content     String
+  slug        String   @unique
+  published   Boolean  @default(true)
+  featured    Boolean  @default(false)
+  tags        String
+  thumbnail   String?
+  publishedAt DateTime
+  createdAt   DateTime @default(now())
+  category    String   @default("general")
+  Likes       Int?
+}
+
+model ImagePiece {
+  id    Int    @id @default(autoincrement())
+  title String
+  Image String
+  Likes Int?
+}
+
+model Message {
+  id        Int      @id @default(autoincrement())
+  message   String
+  sender    String
+  isAdmin   Boolean
+  createdAt DateTime @default(now())
+}
