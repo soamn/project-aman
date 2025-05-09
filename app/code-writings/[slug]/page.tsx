@@ -24,7 +24,7 @@ export default async function CodePostPage({
   if (!post) return notFound();
 
   return (
-    <article className="prose max-w-8xl   lg:max-w-5xl m-auto p-10 article">
+    <article className="prose max-w-8xl   lg:max-w-5xl m-auto lg:p-10 article">
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
     </article>
   );

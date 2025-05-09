@@ -20,7 +20,7 @@ export async function generateMetadata({
   });
   return {
     title: {
-      absolute: post?.title || "A post",
+      absolute: post?.title || "Happy Reading",
     },
     description: post?.description || "Post description",
     keywords: post?.tags,

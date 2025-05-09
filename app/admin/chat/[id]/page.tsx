@@ -24,7 +24,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
     <div className="flex min-h-screen p-20">
       <aside className="w-64 p-4 fixed">
         <h2 className="text-lg font-bold mb-4">Code Writings</h2>
-        <ul className="space-y-2 bg-red-500">
+        <ul className="space-y-2 ">
           {messages.map((message) => (
             <li key={message.sender}>
               <a

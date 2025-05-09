@@ -8,6 +8,7 @@ import {
   ReactNode,
   ReactPortal,
 } from "react";
+import AsideComponent from "./aside-component";
 export default async function CodeWritingsLayout({
   children,
   params,
@@ -25,7 +26,7 @@ export default async function CodeWritingsLayout({
 
   return (
     <div className="flex min-h-screen p-2 ">
-      <aside className="w-fit  p-4 fixed">
+      <aside className="lg:w-fit  p-4 fixed invisible lg:visible w-0">
         <h2 className="text-lg font-bold mb-4">Code Writings</h2>
         <ul className="space-y-2">
           {posts.map(
@@ -47,7 +48,7 @@ export default async function CodeWritingsLayout({
           )}
         </ul>
       </aside>
-
+      <AsideComponent posts={posts} currentSlug={currentSlug} />{" "}
       <main className="flex-1 p-6 m-auto ">{children}</main>
     </div>
   );
