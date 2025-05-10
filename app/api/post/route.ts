@@ -36,13 +36,13 @@ export async function POST(req: NextRequest) {
       const webpFileName = `${baseName}.webp`;
       const filePath = path.join(
         process.cwd(),
-        "public/thumbnails",
+        "uploads/thumbnails",
         webpFileName
       );
 
       await sharp(buffer).webp({ quality: 100 }).toFile(filePath);
 
-      thumbnailPath = `${process.env.NEXT_PUBLIC_URL}/thumbnails/${webpFileName}`;
+      thumbnailPath = `/api/uploads/thumbnails/${webpFileName}`;
     }
     await prisma.post.create({
       data: {

@@ -20,11 +20,11 @@ export async function POST(req: NextRequest) {
       const month = new Date().getMonth() + 1;
       const baseName = path.parse(file.name).name;
       const webpFileName = `${baseName}.webp`;
-      const dir = path.join(process.cwd(), `public/gallery/${year}/${month}`);
+      const dir = path.join(process.cwd(), `uploads/gallery/${year}/${month}`);
       const filePath = path.join(dir, webpFileName);
       fs.mkdirSync(dir, { recursive: true });
       await sharp(buffer).webp({ quality: 100 }).toFile(filePath);
-      thumbnailPath = `${process.env.NEXT_PUBLIC_URL}/gallery/${year}/${month}/${webpFileName}`;
+      thumbnailPath = `/api/uploads/gallery/${year}/${month}/${webpFileName}`;
     }
 
     await prisma.imagePiece.create({

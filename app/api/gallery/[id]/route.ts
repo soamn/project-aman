@@ -68,13 +68,8 @@ export async function DELETE(
       });
     }
 
-    const imageUrl = image.Image;
-    const filePath = path.join(
-      process.cwd(),
-      "public",
-      imageUrl.replace(`${process.env.NEXT_PUBLIC_URL}/`, "")
-    );
-
+    const imageRelativePath = image.Image.replace(/^\/api/, "");
+    const filePath = path.join(process.cwd(), imageRelativePath);
     if (fs.existsSync(filePath)) {
       fs.unlinkSync(filePath);
     }

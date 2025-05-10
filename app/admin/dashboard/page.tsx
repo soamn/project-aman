@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import React from "react";
 import Link from "next/link";
-import { Edit,  MessageCircle, Plus } from "lucide-react";
+import { Edit, MessageCircle, Plus } from "lucide-react";
 import Action from "./action";
 import Logout from "./logout";
 
@@ -120,7 +120,7 @@ const Dashboard = async () => {
                 <td className="border p-2">
                   <img
                     src={item.Image}
-                    alt={`Image ${item.id}`}
+                    alt={`Image ${item.title}`}
                     className="w-16 h-16 object-cover rounded"
                   />
                 </td>

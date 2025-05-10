@@ -102,11 +102,7 @@ export async function PUT(
     });
 
     if (file && post?.thumbnail) {
-      const oldImagePath = path.join(
-        process.cwd(),
-        "public",
-        post.thumbnail.replace(`${process.env.NEXT_PUBLIC_URL}/`, "")
-      );
+      const oldImagePath = post.thumbnail.replace(/^\/api/, "");
       if (fs.existsSync(oldImagePath)) {
         fs.unlinkSync(oldImagePath);
       }
@@ -120,11 +116,11 @@ export async function PUT(
       const webpFileName = `${baseName}.webp`;
       const filePath = path.join(
         process.cwd(),
-        "public/thumbnails",
+        "uploads/thumbnails",
         webpFileName
       );
       await sharp(buffer).webp({ quality: 100 }).toFile(filePath);
-      thumbnailPath = `${process.env.NEXT_PUBLIC_URL}/thumbnails/${webpFileName}`;
+      thumbnailPath = `/api/uploads/thumbnails/${webpFileName}`;
     }
 
     const updateData: any = {
@@ -187,20 +183,16 @@ export async function DELETE(
         message: "Post not found",
       });
     }
+    if (post.thumbnail) {
+      const imagePath = post.thumbnail.replace(/^\/api/, "");
+      if (imagePath) {
+        const filePath = imagePath;
 
-    const imagePath = post.thumbnail;
-    if (imagePath) {
-      const filePath = path.join(
-        process.cwd(),
-        "public",
-        imagePath.replace(`${process.env.NEXT_PUBLIC_URL}/`, "")
-      );
-
-      if (imagePath && fs.existsSync(filePath)) {
-        fs.unlinkSync(filePath);
+        if (imagePath && fs.existsSync(filePath)) {
+          fs.unlinkSync(filePath);
+        }
       }
     }
-
     await prisma.post.delete({
       where: { slug: slug },
     });
