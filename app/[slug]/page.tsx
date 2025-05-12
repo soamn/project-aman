@@ -111,7 +111,7 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
                 className="min-h-20 p-2 cursor-pointer flex flex-col border rounded-md hover:shadow-md transition"
               >
                 <img
-                  src={post.thumbnail || "base.gif"}
+                  src={post.thumbnail || "opengraph-image.png"}
                   className="w-full h-40 object-cover rounded"
                   alt={post.title}
                 />
