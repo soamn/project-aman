@@ -59,8 +59,8 @@ const Message = () => {
   return (
     <>
       <motion.div
-        whileTap={{ scale: [0.1, 1.2, 1] }}
-        transition={{ duration: 0.5 }}
+        whileTap={{ scale: 0.95 }}
+        transition={{ duration: 0.15 }}
         className="bg-zinc-800 w-fit rounded-full p-3 right-4 z-50  
         text-white fixed bottom-6 hover:scale-105 transition-transform duration-300
         cursor-pointer "
