@@ -6,7 +6,7 @@ import Footer from "./components/footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sketched-down.vercel.app"),
-  applicationName: "Readosphere",
+  applicationName: "Sketched-Down",
   title: {
     default: "Sketched-down",
     template: "%s | Sketched-down",

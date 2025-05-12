@@ -69,12 +69,12 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
     image: article.thumbnail,
     author: {
       "@type": "Person",
-      name: "Readosphere",
+      name: "Sketched-Down",
     },
     datePublished: article.createdAt.toISOString(),
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://readosphere.com/${article.slug}`,
+      "@id": `https://sketched-down.vercel.app/${article.slug}`,
     },
   };
 
