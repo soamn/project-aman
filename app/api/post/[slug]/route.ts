@@ -207,6 +207,7 @@ export async function DELETE(
 
     revalidatePath(`/${slug}`);
     revalidatePath("/");
+    revalidatePath("/admin/dashboard");
 
     return NextResponse.json({
       status: 200,
