@@ -50,13 +50,14 @@ h1 {
   display: block;
   width: 100%;
   margin: 0 auto;
-  /* border-radius: 1%; */
+  border-radius: 1%;
 }
 .article p {
   font-family: "Times New Roman", Times, serif;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.75;
 }
+
 .article .editorCode {
   max-height: 500px;
   overflow-y: scroll;

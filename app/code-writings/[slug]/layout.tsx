@@ -34,11 +34,12 @@ export default async function CodeWritingsLayout({
               <li key={post.slug}>
                 <Link
                   href={`/code-writings/${post.slug}`}
-                  className={`relative block px-2 py-1 pl-3 rounded transition-colors duration-300 ${
-                    post.slug === currentSlug
-                      ? "text-zinc-900 font-medium"
-                      : "text-zinc-400 hover:text-zinc-600"
-                  }`}
+                  className={`relative block px-2 py-1 pl-3 w-64 rounded transition-colors duration-300 whitespace-nowrap overflow-hidden text-ellipsis
+                    ${
+                      post.slug === currentSlug
+                        ? "text-zinc-900 font-medium"
+                        : "text-zinc-400 hover:text-zinc-600"
+                    }`}
                 >
                   {post.slug === currentSlug && <ActiveIndicator />}
                   {post.title}

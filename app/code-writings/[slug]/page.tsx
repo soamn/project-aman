@@ -16,9 +16,13 @@ export default async function CodePostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = await prisma.post.findUnique({
-    where: { slug },
-    select: { content: true },
+  const post = await prisma.post.findFirst({
+    where: {
+      OR: [{ slug: slug }, { category: slug }],
+    },
+    select: {
+      content: true,
+    },
   });
 
   if (!post) return notFound();

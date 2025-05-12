@@ -80,8 +80,8 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
   return (
     <>
-      <div className=" w-full  flex flex-col  items-center ">
-        <div className="max-w-3xl mt-10">
+      <div className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8">
+        <div className="w-full max-w-3xl mt-10">
           <div className="mb-2">
             <Likes
               likes={article.Likes || 0}
@@ -89,37 +89,41 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
               isPost={true}
             />
           </div>
+
           {article.thumbnail && (
             <img
               alt={article.title}
               src={article.thumbnail}
-              className="mb-20"
-              width={1200}
-              height={800}
-            ></img>
+              className="mb-10 w-full rounded-md object-cover"
+            />
           )}
+
           <article
             className="prose prose-sm sm:prose md:prose-base lg:prose-lg max-w-none article"
             dangerouslySetInnerHTML={{ __html: article?.content || "" }}
           ></article>
-          <div className="w-full grid grid-cols-2 mt-20">
+
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mt-20">
             {posts.map((post, key) => (
               <Link
                 href={`/${post.slug}`}
                 key={key}
-                className=" min-h-20 p-2 cursor-pointer flex flex-col"
+                className="min-h-20 p-2 cursor-pointer flex flex-col border rounded-md hover:shadow-md transition"
               >
                 <img
                   src={post.thumbnail || "base.gif"}
-                  className="max-h-50 w-full object-cover"
+                  className="w-full h-40 object-cover rounded"
+                  alt={post.title}
                 />
-                <h3 className="text-xl flex-1">{post.title}</h3>
-                <p className="truncate flex-end">{post.description}</p>
+                <h3 className="text-lg font-semibold mt-2">{post.title}</h3>
+                <p className="truncate text-sm text-gray-600">
+                  {post.description}
+                </p>
               </Link>
             ))}
           </div>
-          s
         </div>
+
         <Script
           type="application/ld+json"
           suppressHydrationWarning
