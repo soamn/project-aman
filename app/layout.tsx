@@ -5,21 +5,22 @@ import Navigation from "./nav";
 import Footer from "./components/footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://project-aman"),
+  metadataBase: new URL("https://sketched-down.vercel.app"),
   applicationName: "Readosphere",
   title: {
-    default: "Project-aman",
-    template: "%s | project-aman",
+    default: "Sketched-down",
+    template: "%s | Sketched-down",
   },
-  description: "Get Code snippets , Blogs , personally costumized by me.",
+  description: "Get Code snippets , Blogs , personally written by me.",
 
   keywords: ["Portfolio", "Profile", "Coding", "Blogs"],
   twitter: {
     card: "summary_large_image",
-    description: "Get Code snippets , Blogs , personally costumized by me",
+    description:
+      "Get Code snippets , Blogs on coding , visit exciting projects",
   },
   alternates: {
-    canonical: "https://project-aman.com",
+    canonical: "https://sketched-down.vercel.app",
   },
 };
 
