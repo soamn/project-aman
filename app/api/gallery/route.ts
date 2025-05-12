@@ -35,6 +35,7 @@ export async function POST(req: NextRequest) {
     });
     revalidatePath("/");
     revalidatePath("/admin/dashboard");
+    revalidatePath("/gallery");
     return NextResponse.json({
       status: 200,
       success: true,

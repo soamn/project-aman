@@ -32,6 +32,7 @@ export async function PATCH(
       slug: `gallery/${updatedPost.id}`,
     };
     revalidatePath("/");
+    revalidatePath("/admin/dashboard");
     revalidatePath("/gallery");
 
     return NextResponse.json({
@@ -82,6 +83,7 @@ export async function DELETE(
     await r2.send(command);
 
     revalidatePath("/");
+    revalidatePath("/admin/dashboard");
     revalidatePath("/gallery");
 
     return NextResponse.json({
