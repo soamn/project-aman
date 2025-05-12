@@ -4,6 +4,8 @@ import path from "path";
 import { revalidatePath } from "next/cache";
 import sharp from "sharp";
 import fs from "fs";
+import { r2 } from "@/lib/r2";
+import { PutObjectCommand, DeleteObjectCommand } from "@aws-sdk/client-s3";
 
 export async function GET(
   req: NextRequest,
@@ -94,55 +96,56 @@ export async function PUT(
   const id = (await params).slug;
 
   try {
-    let thumbnailPath = "";
     const post = await prisma.post.findUnique({
-      where: {
-        id: parseInt(id, 10),
-      },
+      where: { id: parseInt(id, 10) },
     });
 
+    let thumbnailPath = post?.thumbnail ?? "";
     if (file && post?.thumbnail) {
-      const oldImagePath = post.thumbnail.replace(/^\/api/, "");
-      if (fs.existsSync(oldImagePath)) {
-        fs.unlinkSync(oldImagePath);
+      const publicPrefix = process.env.R2_PUBLIC_URL!;
+      const key = post.thumbnail.replace(`${publicPrefix}/`, "");
+
+      if (key) {
+        await r2.send(
+          new DeleteObjectCommand({
+            Bucket: process.env.R2_BUCKET_NAME!,
+            Key: key,
+          })
+        );
       }
     }
 
     if (file) {
       const arrayBuffer = await file.arrayBuffer();
       const buffer = Buffer.from(arrayBuffer);
-
       const baseName = path.parse(file.name).name;
-      const webpFileName = `${baseName}.webp`;
-      const filePath = path.join(
-        process.cwd(),
-        "uploads/thumbnails",
-        webpFileName
+      const webpFileName = `${baseName}-${Date.now()}.webp`;
+      const webpBuffer = await sharp(buffer).webp({ quality: 100 }).toBuffer();
+      await r2.send(
+        new PutObjectCommand({
+          Bucket: process.env.R2_BUCKET_NAME!,
+          Key: webpFileName,
+          Body: webpBuffer,
+          ContentType: "image/webp",
+        })
       );
-      await sharp(buffer).webp({ quality: 100 }).toFile(filePath);
-      thumbnailPath = `/api/uploads/thumbnails/${webpFileName}`;
-    }
 
-    const updateData: any = {
-      title,
-      description,
-      slug,
-      tags,
-      content,
-      category: formData.get("category"),
-      published: published === "1",
-      featured: featured === "1",
-    };
-
-    if (thumbnailPath) {
-      updateData.thumbnail = thumbnailPath;
+      thumbnailPath = `${process.env.R2_PUBLIC_URL}/${webpFileName}`;
     }
 
     const updatedPost = await prisma.post.update({
-      where: {
-        id: parseInt(id),
+      where: { id: parseInt(id) },
+      data: {
+        title,
+        description,
+        slug,
+        tags,
+        content,
+        category: formData.get("category") as string,
+        published: published === "1",
+        featured: featured === "1",
+        thumbnail: thumbnailPath,
       },
-      data: updateData,
     });
 
     revalidatePath(`/${updatedPost.slug}`);
@@ -155,7 +158,7 @@ export async function PUT(
       message: "Post updated successfully",
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return NextResponse.json({
       status: 500,
       success: false,
@@ -173,7 +176,7 @@ export async function DELETE(
 
   try {
     const post = await prisma.post.findUnique({
-      where: { slug: slug },
+      where: { slug },
     });
 
     if (!post) {
@@ -183,18 +186,23 @@ export async function DELETE(
         message: "Post not found",
       });
     }
-    if (post.thumbnail) {
-      const imagePath = post.thumbnail.replace(/^\/api/, "");
-      if (imagePath) {
-        const filePath = imagePath;
 
-        if (imagePath && fs.existsSync(filePath)) {
-          fs.unlinkSync(filePath);
-        }
+    if (post.thumbnail) {
+      const publicPrefix = process.env.R2_PUBLIC_URL!;
+      const key = post.thumbnail.replace(`${publicPrefix}/`, "");
+
+      if (key) {
+        await r2.send(
+          new DeleteObjectCommand({
+            Bucket: process.env.R2_BUCKET_NAME!,
+            Key: key,
+          })
+        );
       }
     }
+
     await prisma.post.delete({
-      where: { slug: slug },
+      where: { slug },
     });
 
     revalidatePath(`/${slug}`);
@@ -206,6 +214,7 @@ export async function DELETE(
       message: "Post deleted successfully",
     });
   } catch (error) {
+    console.error(error);
     return NextResponse.json({
       status: 500,
       success: false,

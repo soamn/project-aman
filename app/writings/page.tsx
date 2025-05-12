@@ -32,7 +32,7 @@ const page = async ({
               className="group p-4 bg-white rounded-xl shadow hover:shadow-md transition duration-200 flex flex-col"
             >
               <img
-                src={post.thumbnail || "/base.gif"}
+                src={post.thumbnail || "/opengraph-image.png"}
                 alt={post.title}
                 className="rounded-lg h-48 object-cover w-full mb-3"
               />

@@ -1,8 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
-import path from "path";
-import fs from "fs";
 import { revalidatePath } from "next/cache";
+import { DeleteObjectCommand, S3Client } from "@aws-sdk/client-s3";
+import { r2 } from "@/lib/r2";
 
 export async function PATCH(
   req: NextRequest,
@@ -54,12 +54,14 @@ export async function DELETE(
 ) {
   const { params } = context;
   const id = (await params).id;
+
   try {
     const image = await prisma.imagePiece.delete({
       where: {
         id: Number(id),
       },
     });
+
     if (!image) {
       return NextResponse.json({
         success: false,
@@ -68,23 +70,31 @@ export async function DELETE(
       });
     }
 
-    const imageRelativePath = image.Image.replace(/^\/api/, "");
-    const filePath = path.join(process.cwd(), imageRelativePath);
-    if (fs.existsSync(filePath)) {
-      fs.unlinkSync(filePath);
-    }
+    const publicUrl = image.Image;
+    const publicPrefix = process.env.R2_PUBLIC_URL!;
+    const key = publicUrl.replace(`${publicPrefix}/`, "");
+    const objectKey = key;
+    const command = new DeleteObjectCommand({
+      Bucket: process.env.R2_BUCKET_NAME!,
+      Key: objectKey,
+    });
+
+    await r2.send(command);
+
     revalidatePath("/");
     revalidatePath("/gallery");
+
     return NextResponse.json({
       success: true,
       status: 200,
-      message: "deleted successfully",
+      message: "Deleted successfully",
     });
-  } catch {
+  } catch (error) {
+    console.error("Delete error:", error);
     return NextResponse.json({
       success: false,
       status: 500,
-      message: "failed to delete",
+      message: "Failed to delete",
     });
   }
 }
