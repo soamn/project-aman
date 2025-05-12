@@ -2,11 +2,8 @@ import ActiveIndicator from "@/app/components/activeindicator";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import {
-  JSXElementConstructor,
   Key,
-  ReactElement,
   ReactNode,
-  ReactPortal,
 } from "react";
 import AsideComponent from "./aside-component";
 export default async function CodeWritingsLayout({

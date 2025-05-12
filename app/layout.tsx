@@ -11,7 +11,8 @@ export const metadata: Metadata = {
     default: "Sketched-down",
     template: "%s | Sketched-down",
   },
-  description: "Get Code snippets , Blogs , personally written by me.",
+  description:
+    "Anything and everything sketched down refers to the total documentation of thoughts, visuals, and concepts, typically in a rough or exploratory form, to ensure nothing is forgotten, ignored, or left out during a creative or planning process.",
 
   keywords: ["Portfolio", "Profile", "Coding", "Blogs"],
   twitter: {

@@ -18,19 +18,42 @@ export async function generateMetadata({
   const post = await prisma.post.findUnique({
     where: { slug: slug, published: true },
   });
-  return {
-    title: {
-      absolute: post?.title || "Happy Reading",
-    },
-    description: post?.description || "Post description",
-    keywords: post?.tags,
 
+  const title = post?.title || "Happy Reading";
+  const description = post?.description || "Post description";
+  const image =
+    post?.thumbnail || "https://sketched-down.vercel.app/opengraph-image.png";
+  const url = `https://sketched-down.vercel.app/code-writings/${slug}`;
+
+  return {
+    title: { absolute: title },
+    description,
+    keywords: post?.tags,
     openGraph: {
+      title,
+      description,
+      url,
+      siteName: "Sketched-down",
       images: [
         {
-          url: post?.thumbnail || "",
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: title,
         },
       ],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+      creator: "@yourTwitterHandle", // optional
+    },
+    metadataBase: new URL("https://sketched-down.vercel.app"),
+    alternates: {
+      canonical: url,
     },
   };
 }
