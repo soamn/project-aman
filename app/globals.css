@@ -220,3 +220,8 @@ h1 {
 .editorTokenVariable {
   color: #9cdcfe;
 }
+.article a {
+  color: #0070f3;
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
+}
