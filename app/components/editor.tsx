@@ -19,6 +19,7 @@ import LoadHtmlPlugin from "./plugins/LoadHtmlPlugin";
 import SavePlugin from "./plugins/SavePlugin";
 import UpdatePlugin from "./plugins/UpdatePlugin";
 import { theme } from "./theme";
+import { HtmlPreviewNode } from "./nodes/HtmlPreviewNode";
 
 function onError(error: Error) {
   // console.error(error);
@@ -39,6 +40,7 @@ function Editor({ html, isUpdate }: { html: string; isUpdate: boolean }) {
       CodeNode,
       ImageNode,
       CodeHighlightNode,
+      HtmlPreviewNode,
     ],
   };
 

@@ -2,7 +2,7 @@
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import React, { useEffect, useRef, useState } from "react";
 import { $generateHtmlFromNodes } from "@lexical/html";
-import {  useParams, useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 const UpdatePlugin = () => {
   const router = useRouter();
@@ -14,7 +14,6 @@ const UpdatePlugin = () => {
       router.replace("/404");
     }
     const post = data.message.post;
-    console.log(post);
     setTitle(post.title);
     setDescription(post.description);
     setSlug(post.slug);

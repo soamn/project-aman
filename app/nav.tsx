@@ -9,7 +9,7 @@ const Navigation = () => {
       initial={{ y: -30 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, delay: 0.4, type: "spring" }}
-      className=" p-2 flex justify-center mt-2 cabin-sketch-regular"
+      className=" p-2 flex justify-center mt-2 cabin-sketch-regular  bg-inherit w-full"
     >
       <nav>
         <ul className="flex space-x-20 hover:underline">

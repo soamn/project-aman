@@ -61,9 +61,9 @@ const Message = () => {
       <motion.div
         whileTap={{ scale: 0.95 }}
         transition={{ duration: 0.15 }}
-        className="bg-zinc-800 w-fit rounded-full p-3 right-4 z-50  
+        className="bg-blue-500 w-fit rounded-full p-2 right-4 z-50  
         text-white fixed bottom-6 hover:scale-105 transition-transform duration-300
-        cursor-pointer "
+        cursor-pointer  "
         onClick={() => setIsOpen(!isOpen)}
       >
         {!isOpen ? <MessageSquare /> : <ChevronDown />}
@@ -77,7 +77,7 @@ const Message = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 50, scale: 0.95 }}
             transition={{ duration: 0.1 }}
-            className="right-4 fixed bottom-20 bg-white text-black rounded-xl shadow-lg  w-100 h-180 z-[100] flex flex-col"
+            className="right-4 fixed bottom-20 bg-white text-black rounded-xl shadow-lg  lg:w-90 h-100 z-[100] flex flex-col"
           >
             <div className="w-full p-4 shadow font-bold flex items-center space-x-2">
               <img

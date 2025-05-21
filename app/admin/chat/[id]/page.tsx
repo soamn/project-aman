@@ -13,7 +13,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
       sender: true,
     },
     orderBy: {
-      createdAt: "desc",
+      createdAt: "category",
     },
     distinct: ["sender"],
     take: 10,

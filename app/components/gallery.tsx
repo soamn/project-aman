@@ -16,7 +16,7 @@ const Gallery = async () => {
       </h2>
 
       <div className="columns-1 sm:columns-2 md:columns-3 gap-4 max-w-7xl mx-auto ">
-        {images.slice(0, 10).map((image:any, index:number) => (
+        {images.slice(0, 10).map((image: any, index: number) => (
           <div className="group" key={index}>
             <Link href="/gallery" className="break-inside-avoid mb-4 block ">
               <img

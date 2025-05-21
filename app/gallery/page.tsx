@@ -4,9 +4,7 @@ import Likes from "../components/likes";
 
 const page = async () => {
   const images = await prisma.imagePiece.findMany({
-    orderBy: {
-      Likes: "desc",
-    },
+    orderBy: { Likes: "desc" },
   });
 
   return (

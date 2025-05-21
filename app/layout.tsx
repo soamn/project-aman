@@ -33,7 +33,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-offwhite flex flex-col h-screen">
-        <Navigation />
         <div className="flex-1  ">{children}</div>
         <div className="flex-end ">
           <Footer />

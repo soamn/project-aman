@@ -49,7 +49,7 @@ export async function generateMetadata({
       title,
       description,
       images: [image],
-      creator: "@yourTwitterHandle", // optional
+      creator: "@soamn", // optional
     },
     metadataBase: new URL("https://sketched-down.vercel.app"),
     alternates: {

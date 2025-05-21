@@ -26,6 +26,7 @@ import {
 import ImagePlugin from "./plugins/ImagePlugin";
 import CodeBlockPlugin from "./plugins/CodeBlockPlugin";
 import { $isCodeNode, getDefaultCodeLanguage } from "@lexical/code";
+import SandboxPlugin from "./plugins/SandboxPlugin";
 export function Toolbar() {
   const [editor] = useLexicalComposerContext();
   const [isBold, setIsBold] = useState(false);
@@ -190,7 +191,7 @@ export function Toolbar() {
         >
           <Link />
         </button>
-
+        <SandboxPlugin />
         <ImagePlugin />
         <CodeBlockPlugin
           blockType={blockType}

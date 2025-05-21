@@ -3,17 +3,15 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full border-t border-zinc-300  bg-inherit hover:underline flow-hidden">
-      <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 px-4 py-6 text-zinc-600 text-xs sm:text-sm max-w-screen overflow-x-hidden">
+    <footer className="w-full border-t border-zinc-300  bg-inherit hover:underline flow-hidden  ">
+      <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2  py-4 text-zinc-600 text-xs sm:text-sm max-w-screen overflow-x-hidden">
         <Link href="/writings" className="hover:underline">
           Writings
         </Link>
         <Link href="/gallery" className="hover:underline">
           Gallery
         </Link>
-        <Link href="/code-writings/code" className="hover:underline">
-          Code
-        </Link>
+
         <Link
           href="https://github.com/soamn"
           className="hover:underline"
@@ -40,6 +38,9 @@ const Footer = () => {
         </Link>
         <Link href="/" className="hover:underline">
           Home
+        </Link>
+        <Link href="/fancy" className="hover:underline">
+          Fancy Page
         </Link>
       </div>
     </footer>
