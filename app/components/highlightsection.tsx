@@ -50,7 +50,7 @@ const HighlightSection = () => {
             <p className="text-3xl">Hello, My name Is Aman</p>
             <p>Im a developer From India</p>
             <p>I've been Creating digital products from</p>
-            <p>more than 3+ years.</p>
+            <p>more than 2+ years.</p>
           </motion.div>
           <svg
             className=" z-50 ml-10 w-fit "
