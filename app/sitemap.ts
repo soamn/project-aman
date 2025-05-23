@@ -10,12 +10,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   });
 
   const postEntries: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `https://project-aman/${post.slug}`,
+    url: `https://amannegi.online/${post.slug}`,
   }));
 
   return [
     {
-      url: `https://project-aman`,
+      url: `https://amannegi.online/`,
       lastModified: new Date(),
     },
     ...postEntries,
