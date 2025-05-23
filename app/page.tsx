@@ -51,9 +51,8 @@ export default function Page() {
                 >
                   {typedText}
                 </motion.span>{" "}
-                from India and I have been developing digital products for more
-                than <br />
-                <span className="font-bold text-emerald-500">2+ years</span>.
+                from India and I create apps and websites. This is a space where
+                I share my projects, articles, and code snippets.{" "}
               </p>
               <p className="pt-1 text-xs">
                 <Link

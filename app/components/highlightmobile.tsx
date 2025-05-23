@@ -39,7 +39,7 @@ const HighlightMobileSection = () => {
         <p className="text-xl md:text-3xl ">Hello, I'm Aman</p>
         <p className="text-md">Developer from India</p>
         <p className="text-md">Creating digital products</p>
-        <p className="text-md">for over 3+ years</p>
+        <p className="text-md">for over 2+ years</p>
       </motion.div>
 
       <motion.div
