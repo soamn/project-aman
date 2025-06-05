@@ -68,6 +68,9 @@ h1 {
     height: 40vh;
     max-height: 400px;
   }
+  .article p {
+    font-family: "Times New Roman", Times, serif;
+  }
 }
 
 @media (max-width: 480px) {
@@ -75,10 +78,13 @@ h1 {
     height: 30vh;
     max-height: 300px;
   }
+  .article p {
+    font-family: "Times New Roman", Times, serif;
+  }
 }
 
 .article p {
-  font-family: "Times New Roman", Times, serif;
+  font-family: Calibri, "serif";
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   line-height: 1.75;
 }
@@ -102,7 +108,9 @@ h1 {
     scrollbar-width: auto;
   }
 }
-
+.article h1 {
+  font-family: Calibri, "serif";
+}
 .article h2 {
   @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
 }

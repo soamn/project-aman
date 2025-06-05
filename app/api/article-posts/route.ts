@@ -3,9 +3,8 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   const posts = await prisma.post.findMany({
-    where: { category: "general" },
-
-    orderBy: { Likes: "desc" },
+    where: { category: "general", published: true },
+    orderBy: { updatedAt: "desc" },
   });
 
   return NextResponse.json(posts);

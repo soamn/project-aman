@@ -8,7 +8,7 @@ import Logout from "./logout";
 async function getPosts() {
   return await prisma.post.findMany({
     orderBy: {
-      createdAt: "desc",
+      updatedAt: "desc",
     },
   });
 }

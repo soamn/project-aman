@@ -63,7 +63,7 @@ const posts = await prisma.post.findMany({
     published: true,
   },
   orderBy: {
-    Likes: "desc",
+    updatedAt: "desc",
   },
   take: 6,
 });
