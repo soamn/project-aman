@@ -74,7 +74,7 @@ export default function Page() {
                   whileInView={{ scale: 1 }}
                   transition={{ duration: 0.1, ease: "easeInOut" }}
                   viewport={{ once: true }}
-                  src="https://media.licdn.com/dms/image/v2/D5603AQEczudmYK1kXg/profile-displayphoto-shrink_200_200/B56ZbtQrXdGgAY-/0/1747737296040?e=1753315200&v=beta&t=QSKXzuNAf0LTnPvhF0vTvERcoYyJ-YnFKYgzVX-32Po"
+                  src="https://avatars.githubusercontent.com/u/134830116?v=4"
                   alt="Aman Negi"
                   className="object-cover w-20 h-20 rounded-full ring-1 ring-white"
                 />
