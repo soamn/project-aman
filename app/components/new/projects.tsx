@@ -30,15 +30,15 @@ export default function Projects() {
       {posts.length === 0 && (
         <p className="text-sm text-gray-500">No projects found</p>
       )}
-      {posts.map((post) => (
+{posts.map((post) => (
         <Link
           href={post.slug}
           key={post.id}
-          className="bg-white w-full rounded-md h-20 flex items-center justify-between cursor-pointer "
+          className=" w-full  border-b-2 border-gray-200 h-30 flex items-center justify-between cursor-pointer "
         >
           <div className="flex flex-col p-2">
             <p className="text-sm font-semibold">{post.title}</p>
-            <p className="text-sm text-gray-500 line-clamp-1">
+            <p className="text-sm text-gray-500 line-clamp-2">
               {post.description}
             </p>
           </div>
