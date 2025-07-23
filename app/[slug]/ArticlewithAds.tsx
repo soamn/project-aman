@@ -3,11 +3,15 @@ import AdBanner from "../components/AdBanner";
 
 // Helper to check if paragraph has real content
 function isMeaningful(content: string) {
-  const text = content
+  const hasImage = /<img[^>]*>/i.test(content);
+  const stripped = content
+    .replace(/<img[^>]*>/gi, "")
+    .replace(/<br\s*\/?>/gi, "")
     .replace(/<[^>]*>/g, "")
     .replace(/&nbsp;/g, "")
     .trim();
-  return text.length > 0;
+
+  return stripped.length > 0 || hasImage;
 }
 
 export function splitHtmlWithAds(html: string, every: number = 3, maxAds = 2) {
