@@ -124,7 +124,7 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
           )}
 
           <article className="prose prose-sm sm:prose md:prose-base lg:prose-lg max-w-none article">
-            {splitHtmlWithAds(article?.content || "", 5)}
+            {splitHtmlWithAds(article?.content || "", 8, 3)}
           </article>
 
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mt-20">
