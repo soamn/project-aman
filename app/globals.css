@@ -2,11 +2,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap");
 @import "tailwindcss";
 
+
+
+
 body {
   box-sizing: border-box;
   padding: 0;
   font-family:"serif sans-serif";
 }
+
+ins.adsbygoogle[data-ad-status="unfilled"] {
+    display: none !important;
+}
+
 .bg-offwhite {
   @apply bg-[#FAF9F6];
 }
