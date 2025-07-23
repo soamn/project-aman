@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Script from "next/script";
 import Link from "next/link";
 import Likes from "../components/likes";
+import { splitHtmlWithAds } from "./ArticlewithAds";
 
 export const revalidate = 7200;
 export const dynamicParams = true;
@@ -22,8 +23,8 @@ export async function generateMetadata({
   const title = post?.title || "Happy Reading";
   const description = post?.description || "Post description";
   const image =
-    post?.thumbnail || "https://sketched-down.vercel.app/opengraph-image.png";
-  const url = `https://sketched-down.vercel.app/code-writings/${slug}`;
+    post?.thumbnail || "https://amannegi.online/opengraph-image.png";
+  const url = `https://amannegi.online/code-writings/${slug}`;
 
   return {
     title: { absolute: title },
@@ -33,7 +34,7 @@ export async function generateMetadata({
       title,
       description,
       url,
-      siteName: "Sketched-down",
+      siteName: "amannegi.online",
       images: [
         {
           url: image,
@@ -51,7 +52,7 @@ export async function generateMetadata({
       images: [image],
       creator: "@soamn", // optional
     },
-    metadataBase: new URL("https://sketched-down.vercel.app"),
+    metadataBase: new URL("https://amannegi.online.app"),
     alternates: {
       canonical: url,
     },
@@ -92,18 +93,19 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
     image: article.thumbnail,
     author: {
       "@type": "Person",
-      name: "Sketched-Down",
+      name: "Aman Negi",
     },
     datePublished: article.createdAt.toISOString(),
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://sketched-down.vercel.app/${article.slug}`,
+      "@id": `https://amannegi.online/${article.slug}`,
     },
   };
 
   return (
     <>
       <div className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8">
+        i
         <div className="w-full max-w-3xl mt-10">
           <div className="mb-2">
             <Likes
@@ -121,10 +123,9 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
             />
           )}
 
-          <article
-            className="prose prose-sm sm:prose md:prose-base lg:prose-lg max-w-none article"
-            dangerouslySetInnerHTML={{ __html: article?.content || "" }}
-          ></article>
+          <article className="prose prose-sm sm:prose md:prose-base lg:prose-lg max-w-none article">
+            {splitHtmlWithAds(article?.content || "", 5)}
+          </article>
 
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mt-20">
             {posts.map((post, key) => (
@@ -146,8 +147,8 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
             ))}
           </div>
         </div>
-
         <Script
+          id="application/ld+json"
           type="application/ld+json"
           suppressHydrationWarning
           key="blog-jsonld"
