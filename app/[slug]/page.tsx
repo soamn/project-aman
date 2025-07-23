@@ -105,7 +105,6 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   return (
     <>
       <div className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8">
-        i
         <div className="w-full max-w-3xl mt-10">
           <div className="mb-2">
             <Likes
