@@ -6,8 +6,7 @@ function isMeaningful(content: string) {
   const hasImage = /<img[^>]*>/i.test(content);
   const stripped = content
     .replace(/<img[^>]*>/gi, "")
-    // .replace(/<br\s*\/?>/gi, "")
-    .replace(/<[^>]*>/g, "")
+    .replace(/<(?!br\s*\/?)[^>]*>/gi, "") // keep <br>, remove others
     .replace(/&nbsp;/g, "")
     .trim();
 
