@@ -40,9 +40,9 @@ export default function Page() {
           {/* Header */}
           <div className="pb-5 p-2 relative flex gap-1 border-b border-gray-300">
             <div className="w-full">
-              <div className="text-xl font-bold">Hi, I’m Aman Negi</div>
+              <div className="text-xl font-bold">Hi, Im Aman Negi</div>
               <p className="text-lg text-gray-500">
-                I’m a{" "}
+                Im a{" "}
                 <motion.span
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
