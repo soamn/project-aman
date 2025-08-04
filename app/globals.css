@@ -280,7 +280,8 @@ h5 {
   color: #9cdcfe;
 }
 .article a {
-  color: #0070f3;
+  /* color: #0070f3; */
+  font-weight: 500;
   text-decoration: underline;
   transition: color 0.2s ease-in-out;
 }
