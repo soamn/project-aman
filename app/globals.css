@@ -90,14 +90,10 @@ h5 {
 }
 
 .article ol {
-  position: relative;
-  @apply bg-zinc-100 rounded-xl p-5 ring-1 ring-gray-300;
+  @apply bg-zinc-100 rounded-xl p-5 ring-1  ring-gray-300;
 }
 .article ol::before {
   content: "-> ";
-  position: absolute;
-  top: 1rem;
-  left: 1.25rem;
   background-color: #e4e4e7;
   padding: 0.25rem;
   border-radius: 0.375rem;
@@ -109,8 +105,9 @@ h5 {
 }
 .article ol li {
   list-style-type: decimal;
-  padding-left: 2rem;
+  padding-left: 3rem;
 }
+
 .article li span {
   padding-left: 10px;
 }
@@ -125,6 +122,11 @@ h5 {
   width: 100%;
   justify-content: center;
 }
+.article ul li,
+.article ol li {
+  text-indent: -1.5rem; /* pulls first line to the left */
+}
+
 /* .img-container img {
   border-radius: 3%;
 } */

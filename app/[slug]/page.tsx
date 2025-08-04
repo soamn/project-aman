@@ -101,6 +101,14 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       "@id": `https://amannegi.online/${article.slug}`,
     },
   };
+  let date = article.createdAt.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  const wordsPerMinute = 250;
+  const wordCount = article.content.trim().split(/\s+/).length;
+  const readTimeMinutes = Math.ceil(wordCount / wordsPerMinute);
 
   return (
     <>
@@ -113,7 +121,6 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
               isPost={true}
             />
           </div>
-
           {article.thumbnail && (
             <img
               alt={article.title}
@@ -121,7 +128,10 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
               className="mb-10 w-full rounded-md object-cover"
             />
           )}
-
+          <div className="text-center w-full p-5 text-gray-600">
+            <small className="italic">{date}</small>
+            <p className="inline pl-5">| {readTimeMinutes} min Read</p>
+          </div>
           <article className="prose prose-sm sm:prose md:prose-base lg:prose-lg max-w-none article">
             {splitHtmlWithAds(article?.content || "", 8, 3)}
           </article>
