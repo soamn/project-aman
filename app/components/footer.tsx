@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Email from "./email";
 
 const Footer = () => {
   return (
@@ -42,6 +43,7 @@ const Footer = () => {
         <Link href="/fancy" className="hover:underline">
           Fancy Page
         </Link>
+        <Email />
       </div>
     </footer>
   );

@@ -4,6 +4,11 @@ import Link from "next/link";
 import { Edit, MessageCircle, Plus } from "lucide-react";
 import Action from "./action";
 import Logout from "./logout";
+import DashButton from "./dashbutton";
+enum ACTION {
+  Delete,
+  Copy,
+}
 
 async function getPosts() {
   return await prisma.post.findMany({
@@ -17,6 +22,10 @@ async function getImageItems() {
   return await prisma.imagePiece.findMany();
 }
 
+async function getEmails() {
+  return await prisma.email.findMany();
+}
+
 const Dashboard = async () => {
   const posts = await getPosts();
   const groupedPosts = posts.reduce((acc, post) => {
@@ -26,7 +35,7 @@ const Dashboard = async () => {
   }, {} as Record<string, typeof posts>);
 
   const imageItems = await getImageItems();
-
+  const emails = await getEmails();
   return (
     <div className="flex">
       <aside className="w-64  text-black p-4 h-screen">
@@ -127,6 +136,30 @@ const Dashboard = async () => {
                 <td className="border p-2">{item.Likes}</td>
                 <td className="border p-2">
                   <Action url={item.id} isPost={false} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <h2 className="text-xl mb-2 font-medium">Emails</h2>
+        <table className="w-full table-auto border-collapse">
+          <thead>
+            <tr>
+              <th className="border p-2">Emails</th>
+              <th className="border p-2">copy</th>
+              <th className="border p-2">delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {emails.map((email) => (
+              <tr key={email.id}>
+                <td className="border p-2">{email.email}</td>
+                <td className="border p-2">
+                  <DashButton action={ACTION.Copy} string={email.email} />
+                </td>
+                <td className="border p-2">
+                  <DashButton action={ACTION.Delete} string={email.email} />
                 </td>
               </tr>
             ))}

@@ -2,49 +2,123 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap");
 @import "tailwindcss";
 
-
-
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SUSE";
+  src: url("/fonts/suse/SUSE-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+ins.adsbygoogle[data-ad-status="unfilled"] {
+  display: none !important;
+}
 
 body {
   box-sizing: border-box;
   padding: 0;
-  font-family:"serif sans-serif";
-}
-
-ins.adsbygoogle[data-ad-status="unfilled"] {
-    display: none !important;
-}
-
-.bg-offwhite {
-  @apply bg-[#FAF9F6];
-}
-.font-caveat {
-  font-family: "Caveat", cursive;
-  font-optical-sizing: auto;
+  font-family: "Inter";
   font-weight: 400;
-  font-style: normal;
 }
-.cabin-sketch-regular {
-  font-family: "Cabin Sketch", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
 h1 {
   @apply text-5xl;
 }
-
-.sketch-border {
-  border-image: url("/border.svg") 10 stretch;
-  border-style: solid;
+.article h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "SUSE";
+}
+.article h1 {
+  font-weight: 800;
 }
 
-.font-Times {
-  font-family: "Times New Roman", Times, serif;
+.article h2 {
+  font-weight: 700;
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-4xl;
 }
 
+.article h3 {
+  font-weight: 600;
+
+  @apply text-xl sm:text-2xl md:text-3xl lg:text-3xl;
+}
+
+.article h4 {
+  font-weight: 500;
+
+  @apply text-lg sm:text-xl md:text-2xl;
+}
+
+.article h5 {
+  @apply text-base;
+}
+
+.article h6 {
+  @apply text-[0.4rem];
+}
+
+.article p {
+  font-family: "Inter";
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.75;
+}
+.article blockquote span {
+  font-weight: 400;
+}
+.article blockquote {
+  @apply bg-zinc-100 p-5 rounded-xl ring-1 ring-zinc-200 relative pl-14;
+  position: relative;
+}
+
+.article blockquote::before {
+  content: "💡";
+  position: absolute;
+  top: 1.2rem;
+  left: 1.25rem;
+  background-color: #e4e4e7;
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.article ol {
+  position: relative;
+  @apply bg-zinc-100 rounded-xl p-5 ring-1 ring-gray-300;
+}
+.article ol::before {
+  content: "-> ";
+  position: absolute;
+  top: 1rem;
+  left: 1.25rem;
+  background-color: #e4e4e7;
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
 .article ul li {
-  list-style-type: circle;
+  list-style-type: disc;
+  padding-left: 2rem;
+}
+.article ol li {
+  list-style-type: decimal;
+  padding-left: 2rem;
+}
+.article li span {
+  padding-left: 10px;
+}
+.article ul li::marker {
+  color: rgb(168, 168, 168); /* sets bullet (disc) color */
+}
+.article ol li::marker {
+  font-weight: 500; /* sets bullet (disc) color */
 }
 .img-container {
   display: flex;
@@ -77,9 +151,6 @@ h1 {
     height: 40vh;
     max-height: 400px;
   }
-  .article p {
-    font-family: "Times New Roman", Times, serif;
-  }
 }
 
 @media (max-width: 480px) {
@@ -87,15 +158,6 @@ h1 {
     height: 30vh;
     max-height: 300px;
   }
-  .article p {
-    font-family: "Times New Roman", Times, serif;
-  }
-}
-
-.article p {
-  font-family: Calibri, "serif";
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
-  line-height: 1.75;
 }
 
 .article .editorCode {
@@ -116,28 +178,6 @@ h1 {
     max-height: 300px;
     scrollbar-width: auto;
   }
-}
-.article h1 {
-  font-family: Calibri, "serif";
-}
-.article h2 {
-  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
-}
-
-.article h3 {
-  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
-}
-
-.article h4 {
-  @apply text-lg sm:text-xl md:text-2xl;
-}
-
-.article h5 {
-  @apply text-base sm:text-lg md:text-xl;
-}
-
-.article h6 {
-  @apply text-sm sm:text-base md:text-lg;
 }
 
 .message a {
@@ -241,4 +281,24 @@ h1 {
   color: #0070f3;
   text-decoration: underline;
   transition: color 0.2s ease-in-out;
+}
+
+.bg-offwhite {
+  @apply bg-[#FAF9F6];
+}
+.font-caveat {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.cabin-sketch-regular {
+  font-family: "Cabin Sketch", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sketch-border {
+  border-image: url("/border.svg") 10 stretch;
+  border-style: solid;
 }

@@ -45,3 +45,8 @@ model Message {
   isAdmin   Boolean
   createdAt DateTime @default(now())
 }
+
+model Email {
+  id    Int    @id @default(autoincrement())
+  email String @unique
+}
