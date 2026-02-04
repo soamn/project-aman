@@ -4,7 +4,6 @@ generator client {
 
 datasource db {
   provider = "postgres"
-  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -26,9 +25,9 @@ model Post {
   thumbnail   String?
   publishedAt DateTime
   createdAt   DateTime @default(now())
-  updatedAt   DateTime @default(now()) @updatedAt
   category    String   @default("general")
   Likes       Int?
+  updatedAt   DateTime @default(now()) @updatedAt
 }
 
 model ImagePiece {

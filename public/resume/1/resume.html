@@ -1,0 +1,443 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+
+    <title>Aman Negi </title>
+
+    <style>body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 24px 48px;
+    line-height: 1.5;
+
+  max-width: 50rem;      /* controls line length */
+  margin: 2rem auto;    /* centers horizontally */
+  padding: 0 1.5rem; 
+}
+
+h1 {
+    font-size: 26px;
+    text-align: center;
+    margin: 0;
+    line-height: 1.5;
+}
+
+h2 {
+    border-width: 1px;
+    border-style: none none solid none;
+    margin: 10px 0 2.5px 0;
+    line-height: 2em;
+}
+
+h3 {
+      font-size: 14px;
+    display: inline;
+}
+
+section {
+    margin: 3px 0;
+}
+
+ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+a {
+    text-decoration: none;
+    /* color: black; */    
+    color: rgb(137, 169, 211);
+
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+li {
+    list-style: none;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+li::before {
+  content: "-";
+  position: absolute;
+  left: -1em;
+  color: #6b7fd7;   /* your accent color */
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.item {
+    margin-top: 1.5em;
+}
+
+.item>.item-header {
+    float: left;
+    display: block;
+    margin-bottom: .5em;
+}
+
+.item>.item-header>.item-header-title {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.item>.item-header>.item-header-subtitle {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.item>.item-header>.item-header-title>.location {
+    font-weight: normal;
+    white-space: nowrap;
+    font-size: 11px;
+}
+
+.item>.item-details {
+    float: right;
+    text-align: right;
+}
+
+.item>.item-details>.item-details-title {
+    font-weight: bold;
+}
+
+.item>.item-details>.date {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.item>.item-header>.item-header-subtitle>.degree {
+    font-weight: normal;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.centered {
+    text-align: center;
+}
+
+/* Section specific */
+/* basics */
+.vertical-separator {
+    text-align: center;
+    padding: 0 10px;
+}
+
+/*
+  .vertical-separator:not(:first-child) {
+    border-left: 1px solid #000;
+    text-align: center;
+  }
+  */
+
+/* Set some print settings. */
+@media print {
+    @page {
+        size: portrait;
+        margin: 10mm 25mm;
+    }
+
+    .resume {
+        max-width: 100%;
+        border: 0px;
+        background: #fff;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+
+    body,
+    html,
+    
+    .resume {
+        margin: 0px;
+        padding: 0px;
+     
+    }
+    .controls {
+        display: none;
+    }
+
+}
+</style>
+    
+</head>
+
+<body>
+
+    <div id="resume">
+        <section id="basics">
+
+            <h1>Aman Negi </h1>
+
+            <div class="contact centered">
+                 Shimla, Himachal Pradesh
+                 IN
+            </div>
+
+            <div class="contact centered">
+<span>(+91) 8627801947</span>
+<span>|</span>
+<span>amn.negi.work@mail.com</span>            </div>
+
+<div class="contact centered links">
+    <a href="https://linkedin.com/in/soamn" target="_blank" rel="noopener noreferrer">
+      Linkedin: soamn
+    </a> · 
+    <a href="https://github.com/soamn" target="_blank" rel="noopener noreferrer">
+      Github: soamn
+    </a> · 
+    <a href="https://x.com/ni_anming" target="_blank" rel="noopener noreferrer">
+      Twitter: soamn_
+    </a>
+</div>
+
+<div class="contact centered">
+    <a href="https://amannegi.online">
+      Portfolio
+    </a>
+</div>
+
+
+            <div class="summary">
+                <h2>Software Developer</h2>
+
+                <p> I design and develop web, mobile, and desktop applications, blending performance with thoughtful user experience. I create interactive visuals, bridging the gap between functionality and design. I am a Creative Developer with a passion for building across platforms. I enjoy turning complex ideas into polished, usable products—whether it’s an app, a system, or a digital world.</p>
+            </div>
+        </section>
+            
+<section id="skills">
+
+  <div class="skills-grid">
+      <span>
+            <strong>Web Development</strong>: 
+            Nextjs
+      </span>
+      <span>
+            <strong>Application Development</strong>: 
+            Flutter, Tauri
+      </span>
+      <span>
+            <strong>CI/CD</strong>: 
+            Github Actions, Linux Servers
+      </span>
+      <span>
+            <strong>Languages</strong>: 
+            Rust, C++, Javascript, SQL
+      </span>
+  </div>
+</section>
+        
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <h3 class="item-header-title">
+          <a href="https://slicepdf.vercel.app/" target="_blank" rel="noopener noreferrer">
+            SlicePDF
+          </a>
+    <span class="project-links">
+      ·
+      <a href="https://github.com/soamn/slicePDF" target="_blank" rel="noopener noreferrer">
+          Github
+      </a>
+    </span>
+      </h3>
+
+      <div class="item-header-subtitle">
+        Developer
+      </div>
+
+      <div class="date">
+        Jan 2026 – Feb 2026
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <p>A Cross Platform PDF manipulation utility Software</p>
+
+    <ul class="highlights">
+      <li>Generate images with PDF</li>
+      <li>Split and merge PDF files</li>
+      <li>Rotate and Organize PDF pages</li>
+      <li>Compress Images and PDF&#x27;s</li>
+    </ul>
+
+    <p class="keywords">
+      <strong>Tech:</strong>
+      Tauri
+    </p>
+  </div>
+  <div class="item">
+    <div class="item-header">
+      <h3 class="item-header-title">
+          <a href="https://github.com/soamn/aterna" target="_blank" rel="noopener noreferrer">
+            Aterna
+          </a>
+    <span class="project-links">
+      ·
+      <a href="https://github.com/soamn/aterna" target="_blank" rel="noopener noreferrer">
+          Github
+      </a>
+    </span>
+      </h3>
+
+      <div class="item-header-subtitle">
+        Developer
+      </div>
+
+      <div class="date">
+        Jul 2025 – Aug 2025
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <p>Aterna is a terminal-native AI chat interface that brings the power of LLMs (like Groq or OpenAI) directly into your command line</p>
+
+    <ul class="highlights">
+      <li>Chat with AI models directly in your terminal</li>
+      <li>Supports multiple AI model backends (e.g., Groq, OpenAI, etc.)</li>
+      <li>Lightweight, async, and built with ratatui</li>
+    </ul>
+
+    <p class="keywords">
+      <strong>Tech:</strong>
+      Rust
+    </p>
+  </div>
+</section>
+
+
+        <section id="work">
+            <h2>Experience</h2>
+
+            <div class="item">
+                <div class="item-header">
+                    <h3 class="item-header-title">
+      <a href="https://netgen.in" target="_blank" rel="noopener noreferrer">
+        Netgen It solutions
+      </a>
+                        <span class="location">
+                            Shimla
+                        </span>                    </h3>
+                    <div class="item-header-subtitle">
+                        Web Development Intern
+                    </div>
+                    <div class="date">
+                        Jan 2025 - Mar 2025
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <p></p>
+
+                <ul class="highlights">
+                    <li>Developed and Maintained Web Projects built in Laravel.</li>
+                    <li>Implemented Laravel User Authentications , Web sockets , Live Chat , CMS</li>
+                    <li>Optimized Backends by implementing Proper separation of concerns and SOLID principles.</li>
+                    <li>Collaborated with Development Team , to Fix bugs.</li>
+                </ul>
+            </div>
+        </section>
+
+
+<section id="education">
+  <h2>Education</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-header-title">
+          <a href="https://www.ignou.ac.in/" target="_blank" style="color: black;" rel="noopener noreferrer">
+            Indira Gandhi Open National University
+          </a>
+
+      </div>
+
+      <div class="item-header-subtitle">
+        <span class="degree">
+          Masters, Computer applications
+        </span>
+
+      </div>
+
+      <div class="date">
+        Jul 2024
+         – Jul 2026
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+  <div class="item">
+    <div class="item-header">
+      <div class="item-header-title">
+          <a href="https://www.hpuniv.ac.in/" target="_blank" style="color: black;" rel="noopener noreferrer">
+            Himachal Pradesh University
+          </a>
+
+      </div>
+
+      <div class="item-header-subtitle">
+        <span class="degree">
+          Bachelor, Computer applications
+        </span>
+
+      </div>
+
+      <div class="date">
+        Jul 2021
+         – Jul 2024
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+</section>
+
+
+
+<section id="certificates">
+  <h2>Awards</h2>
+
+  <ul class="certificate-list">
+      <li class="certificate-item">
+        <div class="item-header">
+          <h3 class="item-header-title">
+              <a href="https://drive.google.com/file/d/1MxawI840ZLZvRiUQtVBHMr4bnx7yvoiZ/view?usp&#x3D;sharing" style="color: black;" target="_blank" rel="noopener noreferrer">
+                Internship Certificate
+              </a>
+
+          </h3>
+              <span >  Netgen</span>
+
+            <div class="date">Jan 2025</div>
+        </div>
+      </li>
+  </ul>
+</section>
+
+
+</body>
+
+</html>

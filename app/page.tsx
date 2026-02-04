@@ -6,7 +6,7 @@ import Message from "./components/message";
 import Projects from "./components/new/projects";
 import Articles from "./components/new/articles";
 import CodeSnippets from "./components/new/codesnippets";
-import { Github } from "lucide-react";
+import { File, Github } from "lucide-react";
 import Link from "next/link";
 
 export default function Page() {
@@ -41,7 +41,7 @@ export default function Page() {
           <div className="pb-5 p-2 relative flex gap-1 border-b border-gray-300">
             <div className="w-full">
               <div className="text-xl font-bold">Hi, Im Aman Negi</div>
-              <p className="text-lg text-gray-500">
+              <p className="text-md text-gray-500">
                 Im a{" "}
                 <motion.span
                   initial={{ opacity: 0 }}
@@ -51,18 +51,28 @@ export default function Page() {
                 >
                   {typedText}
                 </motion.span>{" "}
-                from India and I create apps and websites. This is a space where
-                I share my projects, articles, and code snippets.{" "}
+                from India and I create apps and websites. I am a Creative
+                Developer with a passion for building across platforms This is a
+                space where I share my projects, articles, and code
+                snippets.{" "}
               </p>
-              <p className="pt-1 text-xs">
+              <p className="pt-4 text-xs flex space-x-5">
                 <Link
                   href="https://github.com/soamn"
                   target="_blank"
                   className="group relative"
                 >
-                  <Github className="w-6 h-6 rounded-md cursor-pointer p-1" />
-                  <span className="bg-gray-200 rounded-md p-1 top-0 left-5 invisible absolute group-hover:visible text-md">
+                  <span className="bg-gray-200 rounded-md p-1 text-md">
                     Github
+                  </span>
+                </Link>
+                <Link
+                  href="/resume/2/resume.html"
+                  target="_blank"
+                  className="group relative"
+                >
+                  <span className="bg-gray-200 rounded-md p-1  text-md">
+                    Resume
                   </span>
                 </Link>
               </p>
