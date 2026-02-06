@@ -1,0 +1,458 @@
+<!doctype html>
+<html>
+	<head>
+
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, user-scalable=no, minimal-ui'>
+
+	<title>Aman Negi </title>
+
+	<style>
+	
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #EEEEEE;
+font-family: 'Times New Roman', Times, sans-serif; 
+ font-size: 14px;
+  line-height: 1.35;
+  margin: 20px 0;
+  color: #000;
+}
+
+em {
+  font-style: italic;
+}
+
+ul {
+  
+  margin: 0;
+  margin-left: 12px;
+  padding-left: 18px;
+  padding-bottom: 5px;
+
+}
+
+li {
+  margin-bottom: 2px;
+}
+p{
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.normal-weight {
+  font-weight: normal;
+}
+
+/* Resume container */
+.resume {
+  margin: 0 auto;
+  max-width: 750px;
+  padding: 20px 28px;
+  background: #fff;
+
+ box-shadow:0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.2) ;
+  border-radius: 0.5rem;
+}
+
+/* Header */
+.nameBlock {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+
+}
+
+.basicsBlock {
+  text-align: center;
+  font-size: 11px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.basicsBlock a{
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+/* Section headers */
+.sectionName {
+  font-size: 12px;
+  font-family: 'Times New Roman', Times, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-bottom: 1px;
+}
+.sectionName::first-letter { font-size: 140%; }
+
+.sectionLine {
+  border-bottom: 1px solid #000;
+  margin-bottom: 6px;
+}
+
+.sectionContent {
+  width: 95%;
+  margin-left: 12px;
+  
+}
+
+/* Spacing between sections */
+.resume > div:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+/* Block headers */
+.blockHeader {
+  margin-bottom: 1px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.date{
+  font-style: italic;
+  font-weight: normal;
+  float: right;
+  font-size: 12px;
+}
+.extraUrl{
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+/* Degrees / positions */
+.degree,
+.position {
+  font-style: italic;
+  margin-bottom: 2px;
+}
+
+/* Lists */
+.sectionContent ul {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+/* Skills */
+.skillBlock {
+  margin-bottom: 2px;
+}
+
+.skillBlock ul li {
+  display: inline;
+  margin-right: 6px;
+}
+
+/* Separators */
+.separator {
+  height: 1px;
+  margin: 3px 0;
+}
+
+/* Print (PDF export) */
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .resume {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+
+  a {
+    color: black;
+  }
+}
+
+	</style>
+
+	</head>
+
+	<body>
+
+	<div class='resume'>
+  <div class='nameBlock'>
+    <span class='name'>Aman Negi </span>
+  </div>
+  <div class='basicsBlock'>
+    <div class='contactBlock'>
+      <span class='phone'>86278 01947 </span>
+      <span class='divider'>   | </span><span class='email'> <a href="mailto:amn.negi.work@gmail.com">amn.negi.work@gmail.com </a></span> 
+    </div>
+    <div class='profilesBlock'>
+        <span class='divider'>&nbsp; | </span><span class='url'><a href='https://linkedin.com/in/soamn'>linkedin.com/in/soamn</a></span>
+        <span class='divider'>&nbsp; | </span><span class='url'><a href='https://github.com/soamn'>github.com/soamn</a></span>
+    </div>
+  </div>
+  <div class='summaryBlock'>
+       <div class='sectionContent'>
+      <p>Cross-platform application developer, works include designing user interfaces, creating APIs, deploying applications, version control and code maintenance.</p>
+    </div>
+  </div>
+	<div class='education'>
+    <div class='sectionName'>
+      <span>EDUCATION</span>
+    </div>
+    <div class='sectionLine'></div>
+    <div class='sectionContent'>
+      <div class='educationBlock'>
+        <div class='blockHeader'>
+          <span class='title'>
+            Indira Gandhi Open National University
+            <span class='date'>
+              Jul 2024 &mdash; Jul 2026
+            </span>
+          </span>
+          <div class='degree'><em>Master of Computer applications</em></div>
+        </div>
+      </div>
+      <div class='separator'></div>
+      <div class='educationBlock'>
+        <div class='blockHeader'>
+          <span class='title'>
+            Himachal Pradesh University
+            <span class='date'>
+              Jul 2021 &mdash; Jul 2024
+            </span>
+          </span>
+          <div class='degree'><em>Bachelor of Computer applications</em></div>
+        </div>
+      </div>
+      
+    </div>
+	</div>
+
+  <div class='projects'>
+    <div class='sectionName'>
+      <span>PROJECTS</span>
+    </div>
+    <div class='sectionLine'></div>
+    <div class='sectionContent'>
+      <div class='projectBlock'>
+        <div class='blockHeader'>
+          <span class='title'>
+
+            <a href='https://github.com/soamn/wfas'><span >WorkFlow Automation </span></a>
+            
+          </span>
+            <span class="divider"> | </span>
+              <span ><em>
+              Express,
+              </em>
+              </span>
+              <span ><em>
+              React,
+              </em>
+              </span>
+              <span ><em>
+              PostgresSQL,
+              </em>
+              </span>
+              <span ><em>
+              Docker
+              </em>
+              </span>
+          <span class='date'>
+            Jan 2026 &mdash; Current
+          </span>
+          <div class="extraUrl">
+            <a href='https://github.com/soamn/wfas'><em class="normal-weight" >(github.com/soamn/wfas) </em>
+            </a>
+          </div>
+         
+        </div>
+        <ul class='highlights'>
+          <li>Developed workflow execution engine In typesctipt to execute multiple workflows</li>
+          <li>Visual editor for node creation and graphical linking of nodes for sequential execution</li>
+          <li>Database storage of workflow structure, nodes, connections, trigger for persistent access</li>
+          <li>Integrated external api&#x27;s like Slack, Telegram, Discord, Gmail with dedicated nodes for each</li>
+        </ul>
+      </div>
+      <div class='separator'></div>
+      <div class='projectBlock'>
+        <div class='blockHeader'>
+          <span class='title'>
+
+            <a href='https://slicepdf.vercel.app/'><span >Slicepdf </span></a>
+            
+          </span>
+            <span class="divider"> | </span>
+              <span ><em>
+              Rust,
+              </em>
+              </span>
+              <span ><em>
+              Tauri
+              </em>
+              </span>
+          <span class='date'>
+            Jan 2026 &mdash; Feb 2026
+          </span>
+          <div class="extraUrl">
+            <a href='https://github.com/soamn/slicePDF'><em class="normal-weight" >(github.com/soamn/slicePDF) </em>
+            </a>
+          </div>
+         
+        </div>
+        <ul class='highlights'>
+          <li>Connected frontend drag events to native Rust PDF processing through Tauri command pipelines</li>
+          <li>Implemented PDF split, merge, rotation, and reordering by directly editing page dictionaries and object references</li>
+        </ul>
+      </div>
+      <div class='separator'></div>
+      <div class='projectBlock'>
+        <div class='blockHeader'>
+          <span class='title'>
+
+            <a href='https://drive.google.com/file/d/1fw2UEiBYx0xpQTAFMhjk4Mg-MG4Gp5hC/view?usp&#x3D;drive_link'><span >ExerAI </span></a>
+            
+          </span>
+            <span class="divider"> | </span>
+              <span ><em>
+              Flutter,
+              </em>
+              </span>
+              <span ><em>
+              Firebase
+              </em>
+              </span>
+          <span class='date'>
+            Jun 2025 &mdash; Jul 2025
+          </span>
+          <div class="extraUrl">
+            <a href='https://github.com/soamn/exerai.git'><em class="normal-weight" >(github.com/soamn/exerai) </em>
+            </a>
+          </div>
+         
+        </div>
+        <ul class='highlights'>
+          <li>Implemented structured function calling for workout generation</li>
+          <li>Developed conversational UI, Tracking System for sessions, streaks and workout history </li>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class='workBlock'>
+    <div class='sectionName'>
+      <span>EXPERIENCE</span>
+    </div>
+
+    <div class='sectionLine'></div>
+			<div class="jobBlock">
+    <div class='sectionContent'>
+	      <div class='blockHeader'>
+	        <span class='date'>
+	          Jan 2025 &mdash; Mar 2025
+            <div> Shimla</div>
+	        </span>
+	        <span class='title'>
+              Web Development Intern  
+        
+          </span>
+
+              <div class="position">
+            <a href='https://netgen.in'>
+              Netgen It solutions 
+              </a>
+         
+              </div>
+	      
+	      </div>
+	      
+	      <ul class='highlights'>
+	        <li>Implemented authentication, real-time WebSocket communication, live chat systems</li>
+	        <li>Collaborated with cross-functional teams to troubleshoot bugs and improve system reliability</li>
+	        <li>Designed and maintained  applications with a focus on scalability and clean architecture</li>
+	        <li>Optimized backend codebases by enforcing separation of concerns and SOLID design principles</li>
+	      </ul>
+
+	      
+			</div>
+    </div>
+  </div>
+
+	<div class='skills'>
+    <div class='sectionName'>
+      <span>SKILLS</span>
+    </div>
+    <div class='sectionLine'></div>
+    <div class='sectionContent'>
+      <div class='skillBlock'>
+        <span class='title'>Languages :</span>
+          <span class='skillList'>
+            <span>Javascript<span>,</span></span>
+            <span>C/C++<span>,</span></span>
+            <span>Python<span>,</span></span>
+            <span>Rust<span>,</span></span>
+            <span>SQL</span>
+          </span>
+      </div>
+      <div class='skillBlock'>
+        <span class='title'>Frameworks :</span>
+          <span class='skillList'>
+            <span>Nextjs<span>,</span></span>
+            <span>Vite<span>,</span></span>
+            <span>Qt<span>,</span></span>
+            <span>Flutter<span>,</span></span>
+            <span>Tailwind</span>
+          </span>
+      </div>
+      <div class='skillBlock'>
+        <span class='title'>Developer Tools :</span>
+          <span class='skillList'>
+            <span>Git<span>,</span></span>
+            <span>VS Code<span>,</span></span>
+            <span>docker<span>,</span></span>
+            <span>prismaORM<span>,</span></span>
+            <span>QtCreator</span>
+          </span>
+      </div>
+    </div>
+	</div>
+
+
+
+
+  <div class='certificates'>
+    <div class='sectionName'>
+      <span>CERTIFICATIONS</span>
+    </div>
+    <div class='sectionLine'></div>
+    <div class='sectionContent'>
+      <div class='certificateBlock'>
+        <div class='blockHeader'>
+          <span class='title'>
+            <a href='https://drive.google.com/file/d/1MxawI840ZLZvRiUQtVBHMr4bnx7yvoiZ/view?usp&#x3D;sharing'>Internship Certificate - Netgen</a>
+          </span>
+          <span class='date'>Jan 2025</span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+	</body>
+</html>

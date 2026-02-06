@@ -67,7 +67,7 @@ export default function Page() {
                   </span>
                 </Link>
                 <Link
-                  href="/resume/2/resume.html"
+                  href="/resume/resume.html"
                   target="_blank"
                   className="group relative"
                 >
