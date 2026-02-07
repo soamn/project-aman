@@ -3,8 +3,8 @@ import bcrypt from "bcrypt";
 type password = string;
 type email = string;
 export async function main() {
-  const pass = <password>process.env.EMAIL_PASSWORD;
-  const email = <password>process.env.EMAIL_ID;
+  const pass: password = process.env.EMAIL_PASSWORD || "";
+  const email: email = process.env.EMAIL_ID || "";
   const hashedPassword = await bcrypt.hash(pass, 10);
   await prisma.user.create({
     data: {

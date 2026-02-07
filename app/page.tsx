@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Message from "./components/message";
 import Projects from "./components/new/projects";
@@ -9,8 +9,19 @@ import CodeSnippets from "./components/new/codesnippets";
 import Link from "next/link";
 
 export default function Page() {
-  const [activeTab, setActiveTab] = React.useState("projects");
+  const [activeTab, setActiveTab] = useState("projects");
+  const [about, setAbout] = useState("");
+  useEffect(() => {
+    fetchAbout();
+  }, []);
+  const fetchAbout = async () => {
+    const res = await fetch("/api/user");
+    const data = await res.json();
 
+    if (res.ok && data?.about !== undefined) {
+      setAbout(data.about ?? "no about");
+    }
+  };
   const tabs = [
     { name: "projects", label: "Projects" },
     { name: "articles", label: "Articles" },
@@ -34,11 +45,7 @@ export default function Page() {
                   Aman Negi
                 </span>
               </div>
-              <p className="text-md text-gray-500">
-                Cross-platform application developer, works include designing
-                user interfaces, creating APIs, deploying applications, version
-                control and code maintenance.
-              </p>
+              <p className="text-md text-gray-500">{about}</p>
               <p className="pt-4 text-xs flex space-x-5">
                 <Link
                   href="https://github.com/soamn"

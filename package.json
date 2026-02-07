@@ -31,6 +31,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/bcrypt": "^6.0.0",
     "@types/estree": "^1.0.7",
     "@types/json-schema": "^7.0.15",
     "@types/node": "^20",
