@@ -49,3 +49,18 @@ model Email {
   id    Int    @id @default(autoincrement())
   email String @unique
 }
+
+model Project {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String?
+  highlights  String[]
+  isPublic    Boolean   @default(false)
+  startDate   DateTime?
+  endDate     DateTime?
+  repoUrl     String?
+  liveUrl     String?
+  imageURL    String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}

@@ -3,7 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import { revalidatePath } from "next/cache";
 import sharp from "sharp";
-import fs from "fs";
 import { r2 } from "@/lib/r2";
 import { PutObjectCommand, DeleteObjectCommand } from "@aws-sdk/client-s3";
 
