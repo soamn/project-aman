@@ -57,7 +57,7 @@ export default function Page() {
                   </span>
                 </Link>
                 <Link
-                  href="/resume/resume.html"
+                  href="https://jtxuerimss16jiju.public.blob.vercel-storage.com/resume/resume.pdf"
                   target="_blank"
                   className="group relative"
                 >
