@@ -78,7 +78,9 @@ export default function HoverVideoPreviewProvider({
 
       <div
         className={`absolute left-0 top-full z-30 mt-3 w-72 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl transition-all duration-200 ${
-          isOpen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+          isOpen
+            ? "visible translate-y-0 opacity-100 pointer-events-auto"
+            : "invisible translate-y-2 opacity-0 pointer-events-none"
         }`}
         onMouseEnter={openPreview}
         onMouseLeave={closePreview}
