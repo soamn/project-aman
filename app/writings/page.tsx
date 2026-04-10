@@ -12,7 +12,10 @@ const page = async ({
 
   const posts = await prisma.post.findMany({
     take: length,
-    ...(category && { where: { category } }),
+    where: {
+      published: true,
+      ...(category ? { category } : {}),
+    },
     orderBy: {
       Likes: "desc",
     },

@@ -11,6 +11,7 @@ export type ProjectFormData = {
   endDate?: string;
   repoUrl?: string;
   liveUrl?: string;
+  videoUrl?: string;
   imageURL?: string;
 };
 
@@ -34,6 +35,7 @@ export default function ProjectForm({
     endDate: initialData?.endDate ?? "",
     repoUrl: initialData?.repoUrl ?? "",
     liveUrl: initialData?.liveUrl ?? "",
+    videoUrl: initialData?.videoUrl ?? "",
     imageURL: initialData?.imageURL ?? "",
   });
 
@@ -129,6 +131,14 @@ export default function ProjectForm({
         placeholder="Live URL"
         value={form.liveUrl}
         onChange={(e) => update("liveUrl", e.target.value)}
+      />
+
+      <input
+        type="url"
+        className="border p-2 w-full"
+        placeholder="Preview Video URL"
+        value={form.videoUrl}
+        onChange={(e) => update("videoUrl", e.target.value)}
       />
 
       <input

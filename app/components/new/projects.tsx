@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import HoverVideoPreviewProvider from "../HoverVideoPreviewProvider";
 
 type Project = {
   id: number;
@@ -13,6 +14,7 @@ type Project = {
   imageURL?: string | null;
   repoUrl?: string | null;
   liveUrl?: string | null;
+  videoUrl?: string | null;
 };
 
 function formatDateRange(start?: string | null, end?: string | null) {
@@ -44,7 +46,7 @@ export default function Projects() {
     const fetchProjects = async () => {
       try {
         const res = await fetch(
-          `/api/project?isPublic=false&key=${process.env.NEXT_PUBLIC_API_KEY}`,
+          `/api/project?isPublic=true&key=${process.env.NEXT_PUBLIC_API_KEY}`,
         );
 
         const data = await res.json();
@@ -100,8 +102,10 @@ export default function Projects() {
             </div>
 
             {/* content */}
-            <div className="flex flex-col w-full border-b pb-6">
-              <p className="font-semibold text-sm">{project.name}</p>
+            <div className="flex flex-col w-full border-b pb-6 overflow-visible">
+              <HoverVideoPreviewProvider videoUrl={project.videoUrl}>
+                <p className="font-semibold text-sm w-fit">{project.name}</p>
+              </HoverVideoPreviewProvider>
 
               {project.description && (
                 <p className="text-sm text-gray-500 mt-1">

@@ -1,6 +1,7 @@
 "use client";
 
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
+import type { InitialConfigType } from "@lexical/react/LexicalComposer";
 import { LinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
@@ -19,10 +20,10 @@ import { useState } from "react";
 import { Link } from "lucide-react";
 import { $getRoot } from "lexical";
 
-const editorConfig = {
+const editorConfig: InitialConfigType = {
   namespace: "MessageEditor",
   theme,
-  onError: (error: Error) => {
+  onError: (error: Error, editor) => {
     console.error(error);
   },
   nodes: [
@@ -35,7 +36,7 @@ const editorConfig = {
     HorizontalRuleNode,
     LinkNode,
     ImageNode,
-  ],
+  ] as any,
 };
 
 function InnerEditor({ onSend }: { onSend: (html: string) => void }) {
@@ -45,7 +46,7 @@ function InnerEditor({ onSend }: { onSend: (html: string) => void }) {
 
   const handleClick = () => {
     const html = editor.getEditorState().read(() => {
-      return $generateHtmlFromNodes(editor, null);
+      return $generateHtmlFromNodes(editor as any, null);
     });
     onSend(html);
     editor.update(() => {

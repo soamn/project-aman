@@ -11,7 +11,8 @@ export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
     const isPublicParam = searchParams.get("isPublic");
 
-    const where = isPublicParam === "true" ? { isPublic: true } : undefined;
+    const where =
+      isPublicParam === null ? undefined : { isPublic: isPublicParam === "true" };
 
     const projects = await prisma.project.findMany({
       where,
@@ -54,6 +55,7 @@ export async function POST(req: Request) {
         endDate,
         repoUrl: data.repoUrl || null,
         liveUrl: data.liveUrl || null,
+        videoUrl: data.videoUrl || null,
         imageURL: data.imageURL || null,
       },
     });

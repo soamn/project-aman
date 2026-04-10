@@ -6,7 +6,7 @@ import { r2 } from "@/lib/r2";
 
 export async function PATCH(
   req: NextRequest,
-  context: { params: Promise<{ id: number }> }
+  context: { params: Promise<{ id: string }> }
 ) {
   const { params } = context;
   const id = (await params).id;
@@ -51,7 +51,7 @@ export async function PATCH(
 
 export async function DELETE(
   req: NextRequest,
-  context: { params: Promise<{ id: number }> }
+  context: { params: Promise<{ id: string }> }
 ) {
   const { params } = context;
   const id = (await params).id;

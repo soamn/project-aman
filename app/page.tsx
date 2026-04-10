@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import Message from "./components/message";
 import Projects from "./components/new/projects";
 import Articles from "./components/new/articles";
-import CodeSnippets from "./components/new/codesnippets";
 import Link from "next/link";
 
 export default function Page() {
@@ -25,7 +24,6 @@ export default function Page() {
   const tabs = [
     { name: "projects", label: "Projects" },
     { name: "articles", label: "Articles" },
-    { name: "code-snippets", label: "Code Snippets" },
   ];
 
   return (
@@ -118,7 +116,6 @@ export default function Page() {
           >
             {activeTab === "projects" && <Projects />}
             {activeTab === "articles" && <Articles />}
-            {activeTab === "code-snippets" && <CodeSnippets />}
           </div>
         </div>
       </div>

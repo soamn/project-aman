@@ -30,7 +30,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
-
+.codex
 # env files (can opt-in for committing if needed)
 .env*
 /prisma/*
